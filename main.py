@@ -1,3 +1,4 @@
+from pprint import pprint
 def parse_recipes(file_path):
     recipes = {}
     current_recipe = None
@@ -48,20 +49,13 @@ def get_shop_list_by_dishes(dishes, person_count):
                     if not ingredient_name in product_list:
                         product_list[ingredient_name] = {'measure': measure, 'quantity': quantity}
                     else:
-                        product_list[ingredient_name]['quantity'] += quantity # складываю в случае повторения продуктов
+                        product_list[ingredient_name]['quantity'] += quantity  # складываю в случае повторения продуктов
 
 
 
             else:
                 return f'Блюда {dish} нет в кулинарной книге'
-    # если нужно отсортировать список продуктов по алфавиту
-    # for ingredient in sorted(product_list):
-    #     quantity = product_list[ingredient]['quantity']
-    #     measure = product_list[ingredient]['measure']
-    #     print(f'{ingredient}: {quantity} {measure}')
-    return product_list
+    return pprint(product_list)
 
-
-# pr_list = get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
-# print(pr_list)
-
+if __name__ == '__main__':
+    get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2)
