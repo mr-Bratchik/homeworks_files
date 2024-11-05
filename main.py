@@ -59,3 +59,4 @@ def get_shop_list_by_dishes(dishes, person_count):
 
 if __name__ == '__main__':
     get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2)
+
